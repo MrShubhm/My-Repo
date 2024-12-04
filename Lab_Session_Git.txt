@@ -1,0 +1,136 @@
+PS C:\Shubham> git init
+Reinitialized existing Git repository in C:/Shubham/.git/
+PS C:\Shubham> git add
+Nothing specified, nothing added.
+hint: Maybe you wanted to say 'git add .'?
+hint: Turn this message off by running
+hint: "git config advice.addEmptyPathspec false"
+PS C:\Shubham> git add File 1
+fatal: pathspec 'File' did not match any files
+PS C:\Shubham> git add File 1.txt
+fatal: pathspec 'File' did not match any files
+PS C:\Shubham> git add Telu.txt
+fatal: pathspec 'Telu.txt' did not match any files
+PS C:\Shubham> git add Telu.txt
+PS C:\Shubham> git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   File 1
+        new file:   Telu.txt
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    File 1
+
+PS C:\Shubham> git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   File 1
+        new file:   Telu.txt
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    File 1
+        modified:   Telu.txt
+
+PS C:\Shubham> git status      
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   File 1
+        new file:   Telu.txt
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    File 1
+        modified:   Telu.txt
+
+PS C:\Shubham> git commit
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'Admin@W11-CL1.(none)')
+PS C:\Shubham> git config --global "skchavan120895@gmail.com"
+error: invalid key: skchavan120895@gmail.com
+PS C:\Shubham> git config --global user.email "skchavan120895@gmail.com"
+PS C:\Shubham> git config --global user.name "MrShubhm"
+PS C:\Shubham> git commit
+Aborting commit due to empty commit message.
+PS C:\Shubham> 
+PS C:\Shubham> git commit -m "addednewline"
+[main (root-commit) e311738] addednewline
+ 2 files changed, 2 insertions(+)
+ create mode 100644 File 1
+ create mode 100644 Telu.txt
+PS C:\Shubham> git status
+On branch main
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    File 1
+        modified:   Telu.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS C:\Shubham> git log
+commit e311738df5c20f3e918706d08f2bf9451de2a79c (HEAD -> main)
+Author: MrShubhm <skchavan120895@gmail.com>
+Date:   Wed Dec 4 02:35:16 2024 -0800
+
+    addednewline
+PS C:\Shubham> git branch  
+* main
+PS C:\Shubham> git push Telu.txt
+fatal: invalid gitfile format: Telu.txt
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+PS C:\Shubham> git push https://github.com/MrShubhm/My-Repo.git
+info: please complete authentication in your browser...
+PS C:\Shubham> git push "https://github.com/MrShubhm/My-Repo.git"
+info: please complete authentication in your browser...
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 296 bytes | 148.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/MrShubhm/My-Repo.git
+ * [new branch]      main -> main
+PS C:\Shubham> git pull "https://github.com/MrShubhm/My-Repo.git"
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (3/3), 967 bytes | 74.00 KiB/s, done.
+From https://github.com/MrShubhm/My-Repo
+ * branch            HEAD       -> FETCH_HEAD
+Updating e311738..d9557dc
+Fast-forward
+ Telu1.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 Telu1.txt
+PS C:\Shubham> 
